@@ -27,14 +27,14 @@ def generate_password():
             return
         for i in range(letters):
             if i%2==0:
-                password.append(s_letters[random.randint(0,25)])
+                password.append(s_letters[random.randint(0,len(s_letters)-1)])
             else:
-                password.append(c_letters[random.randint(0,25)])
+                password.append(c_letters[random.randint(0,len(c_letters)-1)])
         for i in range(numbers):
-            password.append(nums[random.randint(0,9)])
+            password.append(nums[random.randint(0,len(nums)-1)])
         remaining=length-(numbers+letters)
         for i in range(remaining):
-            password.append(s_symbols[random.randint(0,7)])
+            password.append(s_symbols[random.randint(0,len(s_symbols)-1)])
         random.shuffle(password)
         password = "".join(password)
         print(f"Your generated password is : {password}")
